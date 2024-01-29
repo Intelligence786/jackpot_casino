@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/jackpot_casino.iml" filepath="$PROJECT_DIR$/jackpot_casino.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/jackpot_casino_android.iml" filepath="$PROJECT_DIR$/android/jackpot_casino_android.iml" />
     </modules>
   </component>
 </project>

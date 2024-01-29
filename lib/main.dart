@@ -6,12 +6,11 @@ import 'core/app_export.dart';
 import 'core/utils/navigator_service.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
-int initScreen = 0;
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  initScreen = await prefs.getInt("initScreen") ?? 0;
-  await prefs.setInt("initScreen", 1);
+ // prefs.clear();
   Future.wait([
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeRight,
@@ -19,8 +18,6 @@ Future<void> main() async {
     ]),
     PrefUtils().init()
   ]).then((value) {
-
-
     runApp(MyApp());
   });
 }
@@ -49,9 +46,7 @@ class MyApp extends StatelessWidget {
                     '',
                   ),
                 ],
-                initialRoute: initScreen == 0
-                    ? AppRoutes.onBoardingRoute
-                    : AppRoutes.initialRoute,
+                initialRoute: AppRoutes.initialRoute,
                 routes: AppRoutes.routes,
               );
             },
@@ -61,4 +56,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
